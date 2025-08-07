@@ -40,3 +40,19 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libgles2-mesa \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
+# Set working directory
+WORKDIR /app
+
+# Copy all files to the working directory in the container
+COPY . .
+
+# Upgrade pip and install Python dependencies
+RUN pip install --upgrade pip
+RUN pip install -r requirements.txt
+
+# Install Playwright browsers
+RUN python3 -m playwright install
+
+# Start the bot
+CMD ["bash", "start.sh"]
+
