@@ -31,41 +31,16 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libatomic1 \
     libxslt1.1 \
     libwoff1 \
-    libwoff2-1.0-2 \
-    libvpx7 \
+    libwoff2-1.0-1 \
     libevent-2.1-7 \
     libopus0 \
-    libgstallocators-1.0-0 \
-    libgstapp-1.0-0 \
-    libgstbase-1.0-0 \
-    libgstpbutils-1.0-0 \
-    libgstaudio-1.0-0 \
-    libgsttag-1.0-0 \
-    libgstvideo-1.0-0 \
-    libgstgl-1.0-0 \
-    libgstcodecparsers-1.0-0 \
-    libgstfft-1.0-0 \
     libflite1 \
-    libflite1-plugins \
     libwebpdemux2 \
-    libavif15 \
-    libharfbuzz-icu0 \
+    libavif12 \
     libwebpmux3 \
     libenchant-2-2 \
     libhyphen0 \
-    libmanette-0.2-0 \
     libnghttp2-14 \
-    libgles2 \
-    libx264-164 \
+    libgles2-mesa \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
-
-WORKDIR /app
-COPY . .
-
-RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
-
-RUN python3 -m playwright install
-
-CMD ["bash", "start.sh"]
 
