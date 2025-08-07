@@ -1,6 +1,5 @@
 FROM python:3.12-slim
 
-# Install system dependencies for Playwright
 RUN apt-get update && apt-get install -y \
     wget \
     libnss3 \
@@ -33,8 +32,6 @@ COPY . .
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-# Install Playwright browsers
 RUN python3 -m playwright install
 
 CMD ["bash", "start.sh"]
-
