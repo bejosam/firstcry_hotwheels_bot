@@ -30,8 +30,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libatomic1 \
     libxslt1.1 \
     libwoff1 \
-    libwoff2-1.0-1 \
     libevent-2.1-7 \
+    libwoff2-1 \
     libopus0 \
     libwebpdemux2 \
     libwebpmux3 \
